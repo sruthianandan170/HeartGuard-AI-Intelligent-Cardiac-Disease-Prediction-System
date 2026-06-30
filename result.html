@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result | Heart Disease Prediction</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
+
+        body{
+
+            background:linear-gradient(135deg,#0f4c81,#2193b0,#6dd5ed);
+            min-height:100vh;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            padding:20px;
+        }
+
+        .result-card{
+
+            width:100%;
+            max-width:700px;
+
+            background:#fff;
+
+            border-radius:20px;
+
+            padding:45px;
+
+            text-align:center;
+
+            box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+            animation:fadeIn 1s;
+
+        }
+
+        @keyframes fadeIn{
+
+            from{
+
+                opacity:0;
+                transform:translateY(40px);
+
+            }
+
+            to{
+
+                opacity:1;
+                transform:translateY(0);
+
+            }
+
+        }
+
+        h2{
+
+            color:#0f4c81;
+
+            font-weight:700;
+
+            margin-bottom:15px;
+
+        }
+
+        p{
+
+            color:#666;
+
+            margin-bottom:30px;
+
+            font-size:17px;
+
+        }
+
+        .icon{
+
+            font-size:70px;
+
+            margin-bottom:20px;
+
+        }
+
+        .success{
+
+            color:#198754;
+
+        }
+
+        .danger{
+
+            color:#dc3545;
+
+        }
+
+        .alert{
+
+            border-radius:15px;
+
+            font-size:18px;
+
+            padding:20px;
+
+            font-weight:500;
+
+        }
+
+        .btn-home{
+
+            display:inline-block;
+
+            margin-top:25px;
+
+            background:#0f4c81;
+
+            color:#fff;
+
+            padding:13px 35px;
+
+            border-radius:50px;
+
+            text-decoration:none;
+
+            font-size:17px;
+
+            font-weight:600;
+
+            transition:.3s;
+
+        }
+
+        .btn-home:hover{
+
+            background:#0b3558;
+
+            color:white;
+
+            transform:translateY(-3px);
+
+        }
+
+        .footer{
+
+            margin-top:30px;
+
+            color:#888;
+
+            font-size:14px;
+
+        }
+
+        @media(max-width:768px){
+
+            .result-card{
+
+                padding:30px 20px;
+
+            }
+
+            h2{
+
+                font-size:28px;
+
+            }
+
+            .icon{
+
+                font-size:55px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="result-card">
+
+    <h2>❤️ Heart Disease Prediction Result</h2>
+
+    <p>
+        Machine Learning Analysis Completed Successfully
+    </p>
+
+    {% if prediction == 1 %}
+
+        <div class="icon danger">
+            ⚠️
+        </div>
+
+        <div class="alert alert-danger">
+
+            <h4>High Risk Detected</h4>
+
+            <p>
+
+                Our Machine Learning model predicts that the patient
+                may have a higher risk of heart disease.
+
+                <br><br>
+
+                <strong>
+                It is recommended to consult a qualified healthcare
+                professional for further medical evaluation.
+                </strong>
+
+            </p>
+
+        </div>
+
+    {% else %}
+
+        <div class="icon success">
+            ❤️
+        </div>
+
+        <div class="alert alert-success">
+
+            <h4>Low Risk Detected</h4>
+
+            <p>
+
+                Great News!
+
+                <br><br>
+
+                The Machine Learning model predicts a
+                <strong>low risk of heart disease.</strong>
+
+                Continue maintaining a healthy lifestyle,
+                balanced diet, regular exercise and routine
+                health check-ups.
+
+            </p>
+
+        </div>
+
+    {% endif %}
+
+    <a href="/" class="btn-home">
+        ← Back to Home
+    </a>
+
+    <div class="footer">
+
+        Heart Disease Prediction System<br>
+
+        Developed using Machine Learning & Flask
+
+    </div>
+
+</div>
+
+</body>
+</html>
